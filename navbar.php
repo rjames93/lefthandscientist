@@ -13,7 +13,6 @@ $dbresult = &$conn->Execute($query);
     }
 
 
-
 foreach($dbresult as $k => $naventry) {
     if( $k == 0 ){
         echo "<li class=\"active\"><a href=\"#\" id=\"navigation\">$naventry[title]</a></li>";

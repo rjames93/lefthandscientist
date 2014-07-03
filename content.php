@@ -12,30 +12,19 @@ $_SESSION['lastpage']= $lastpage;
 include('parsedown/Parsedown.php');
 $Parsedown = new Parsedown();
 
-/*
-#$query="SELECT title FROM lefthandscientist.pagecontent WHERE navid='$request' ORDER BY age(timestamp,now()) LIMIT 1;";
-#$conn->SetFetchMode(ADODB_FETCH_ASSOC);
-#$dbresult = &$conn->Execute($query);
-#if(!$dbresult){
-#    print $conn->ErrorMsg();
-#}
-#
-
 $pagetitle = $dbresult->fields[title];
 
 $title = $Parsedown->text($pagetitle);
- */
 
-$filename = $request . ".markdown";
+$filename = $request.".markdown";
 
 if( file_exists("page-content/".$filename) ){
     $pagecontent = file_get_contents("page-content/".$filename);
 } else {
     $pagecontent = "This page is undergoing maintainance. We apologise for the inconvienience";
-
 }
 
-if( empty($pagecontent) ){
+if( empty($pagecontent) ) {
     $pagecontent = "This page is undergoing maintainance. We apologise for the inconvienience";
 }
 

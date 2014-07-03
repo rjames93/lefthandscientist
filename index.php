@@ -1,9 +1,3 @@
-<?php
-session_start();
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -80,19 +74,15 @@ $(document).load(function(){
     $("ul.nav.masthead-nav").load("navbar.php");
     $("div.inner.cover:visible").load("content.php",{request: $("li.active")});
 });
-
-$.ajaxSetup({ cache: true});
-
 $(document).ready(function(){
     $("ul.nav.masthead-nav").load("navbar.php");
     $("div.inner.cover").load("content.php",{request: $("li.active").text()});
     $(document).ajaxComplete( function() { 
         $("a#navigation").click(function(){
-            
             if($(this).parent().hasClass("active")){
-
+                console.log($(this).text());
             } else {
-
+                console.log($(this).text());
                 $("div.inner.cover:hidden").load("content.php",{request: $(this).text(),s_page: $(this).text()});
                 $("div.inner.cover:hidden").addClass("ready");
                 $("div.inner.cover:visible").slideToggle();
@@ -100,11 +90,9 @@ $(document).ready(function(){
                 $("div.inner.cover.ready").slideToggle();
                 $(this).parent().addClass("active");
                 $("div.inner.cover,ready:visible").removeClass("ready");
-
             };
         })
     })
-
 });
 </script>
 
