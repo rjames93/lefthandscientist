@@ -24,6 +24,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+    <script src="js/content.js"></script>
+
   </head>
 
   <body>
@@ -62,40 +70,6 @@
       </div>
 
     </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-<script>
-$(document).load(function(){
-    $("ul.nav.masthead-nav").load("navbar.php");
-    $("div.inner.cover:visible").load("content.php",{request: $("li.active")});
-});
-$(document).ready(function(){
-    $("ul.nav.masthead-nav").load("navbar.php");
-    $("div.inner.cover").load("content.php",{request: $("li.active").text()});
-    $(document).ajaxComplete( function() { 
-        $("a#navigation").click(function(){
-            if($(this).parent().hasClass("active")){
-                console.log($(this).text());
-            } else {
-                console.log($(this).text());
-                $("div.inner.cover:hidden").load("content.php",{request: $(this).text(),s_page: $(this).text()});
-                $("div.inner.cover:hidden").addClass("ready");
-                $("div.inner.cover:visible").slideToggle();
-                $("li.active").removeClass("active");
-                $("div.inner.cover.ready").slideToggle();
-                $(this).parent().addClass("active");
-                $("div.inner.cover,ready:visible").removeClass("ready");
-            };
-        })
-    })
-});
-</script>
-
 
 </body>
 </html>
