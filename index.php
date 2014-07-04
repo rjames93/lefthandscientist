@@ -18,6 +18,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
+    <link href="css/additional.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,7 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-
+    <script type="text/javascript" src="js/pdfobject.js"></script>
     <script src="js/content.js"></script>
 
   </head>

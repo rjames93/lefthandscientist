@@ -1,3 +1,10 @@
+function embedPDF(){
+
+    var myPDF = new PDFObject({url: 'cv.pdf', pdfOpenParams: { zoom: '50' }}).embed('pdfcontainer'); 
+
+    // Be sure your document contains an element with the ID 'pdfcontainer' 
+}
+
 $(document).load(function(){
     $("ul.nav.masthead-nav").load("navbar.php").delay(10);
     
@@ -33,5 +40,6 @@ $(document).ready(function(){
                 $("div.inner.cover,ready:visible").removeClass("ready");
             };
         })
+        //embedPDF();
     })
 });

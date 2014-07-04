@@ -30,6 +30,11 @@ if( empty($pagecontent) ) {
 
 $content = $Parsedown->text($pagecontent);
 
+if( $request == "CV" ){
+    $content = "<iframe src=\"cv.pdf#view=fitH\"></iframe>";
+
+}
+
 echo "<div class=\"inner cover\">";
 echo "<h1 class=\"cover-heading\"> $request </h1>";
 echo "<p class=\"lead\"> $content </p>";
