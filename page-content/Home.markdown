@@ -2,11 +2,11 @@
 
 Turn back now if you are a sensitive to:  
 
-Poorly designed
+Poorly designed <a href="http://theoatmeal.com/comics/design_hell">&#185;</a>
 
 Infrequently Updated
 
-Pointless Trivia
+Pointless Trivia <a href="http://dogman0.tripod.com/useless.html">&#178;</a>
 
 Photos of Me
 
