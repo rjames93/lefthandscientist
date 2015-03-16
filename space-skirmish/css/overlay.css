@@ -1,0 +1,39 @@
+.overlay {
+	background-color: #7b9095;
+	margin: 5px;
+	float: left;
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+	display: inline;
+	width: 15%;
+	border-radius: 5px;
+	height: 100%;
+}
+
+#layer-select {
+	margin: 10px;
+}
+
+#layer-status meter {
+	float: right;
+}
+
+
+#layer-status {
+	margin: 10px;
+
+}
+
+#layer-status h3 {
+	text-align: center;
+}
+
+#layer-inventory h3 {
+	text-align: center;
+}
+
+#outputconsole {
+	width: 95%;
+	height: 40%;
+}

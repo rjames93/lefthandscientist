@@ -27,7 +27,9 @@ while($results->fetchArray()){
 }
 $results->reset();
 
-
+if(($_GET["ispeterannoying"] == "true")){
+	echo "<div class=\"bottom\">";
+}
 
 for($i = 0; $i < $distinctcolors; $i++){
 	$col = $results->fetchArray(SQLITE3_NUM);
@@ -67,27 +69,38 @@ for($i = 0; $i < $distinctcolors; $i++){
 		}
 	}
 
-	if($col[0] == '#000000'){
-		echo "<div class=\"result\">
-			<a href=\"http://en.wikipedia.org/wiki/Orange_Is_the_New_Black\">
-			<div class=\"circle\" style=\"background-color: $col[0]\" title=\"$col[0]\">
-			<p class=\"circle-text\">$nvotes</p>
-			</a>
-			</div>
-			$str
-			</div>
-			";
+
+	if(($_GET["ispeterannoying"] == "true")){
+		echo "<button class=\"color\" style=\"background-color: $col[0];\">$col[0]</button>";
 	} else {
-		echo "<div class=\"result\">
-			<div class=\"circle\" style=\"background-color: $col[0]\" title=\"$col[0]\">
-			<p class=\"circle-text\">$nvotes</p>
-			</div>
-			$str
-			</div>
-			";
+
+		if($col[0] == '#000000'){
+			echo "<div class=\"result\">
+				<a href=\"http://en.wikipedia.org/wiki/Orange_Is_the_New_Black\">
+				<div class=\"circle\" style=\"background-color: $col[0]\" title=\"$col[0]\">
+				<p class=\"circle-text\">$nvotes</p>
+				</a>
+				</div>
+				$str
+				</div>
+				";
+		} else {
+			echo "<div class=\"result\">
+				<div class=\"circle\" style=\"background-color: $col[0]\" title=\"$col[0]\">
+				<p class=\"circle-text\">$nvotes</p>
+				</div>
+				$str
+				</div>
+				";
+		}
 	}
 	$str = '';
 }
+
+if(($_GET["ispeterannoying"] == "true")){
+	echo "</div>";
+}
+
 
 $statement->close();
 $statement2->close();

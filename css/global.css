@@ -92,6 +92,13 @@ header img{
 	margin-top: auto;
 }
 
+#wordresults {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.809em;
   line-height: 1em;

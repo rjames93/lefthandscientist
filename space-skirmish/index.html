@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="css/overlay.css">
+		<link rel="stylesheet" type="text/css" href="css/game.css">
+		<link rel="stylesheet" type="text/css" href="js/themes/default/style.min.css">
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="js/jstree.min.js"></script>
+		<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+		<script src="js/gpluslogin.js"></script>
+		<script src="js/game-js/game.js"></script>
+
+	</head>
+	<div class="overlay">
+		<div id="login">
+			<span id="signinButton">
+				<span class="g-signin" data-callback="signinCallback" data-clientid="1032380705816-4qsbn7ln045m4s2oasu4oig6nurp2qs6.apps.googleusercontent.com" data-cookiepolicy="single_host_origin" data-requestvisibleactions="http://schema.org/AddAction" data-scope="https://www.googleapis.com/auth/plus.login"></span>
+			</span>
+			<span id="signoutButton">
+				<button id="revokeButton" style="display: none">Disconnect</button>
+			</span>
+		</div>
+		<div id="layer-status">
+			<h3> System Status </h3>
+			Shield: <meter value="2" min="0" max="100"></meter><br>
+			Life Support: <meter value="1" min="0" max="100"></meter><br>
+		</div>
+
+		<div id="layer-select">
+			<h3> Overlay Chooser </h3>
+			<input type="checkbox" id="comp"><label for="comp" class="lselect">Ship Components</label><br>
+			<input type="checkbox" id="energy"><label for="energy" class="lselect">Energy Network</label><br>
+			<input type="checkbox" id="hull"><label for="hull" class="lselect">Hull</label><br>
+			<input type="checkbox" id="lifesup"><label for="lifesup" class="lselect">Life Support</label><br>
+		</div>
+
+		<div id="layer-inventory">
+			<h3> Inventory </h3>
+			<div id="inv-tree">
+				<ul>
+					<li>Type 1
+					<ul>
+						<li class="jstree-clicked"> Item 1 </li>
+					</ul>
+					</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+					<li>Item 4</li>
+				</ul>
+			</div>
+
+			<div id="console">
+				<h3> Console </h3>
+				<textarea id="outputconsole"></textarea>
+			</div>
+
+
+			<script>
+				$( document ).ready(function() {
+					$('#inv-tree').jstree();
+					$('#revokeButton').click(function(){
+					        disconnectUser(access_token);
+					});
+				});
+			</script>
+		</div>
+
+
+
+	</div>
+
+
+
+
+	<div id="game">
+		<canvas id="game-layer">
+
+		</canvas>
+	</div>
+
+
+</html>
