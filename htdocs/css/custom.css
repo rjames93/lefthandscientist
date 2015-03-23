@@ -30,3 +30,7 @@ html, body {
 .edit {
     text-align: right;
 }
+
+.breadcrumb {
+  background-color: transparent;
+}

@@ -2,9 +2,33 @@
 
 {block name=footer}
 <footer class="footer">
+  <br>
+  <div id="breadcrumbs">
+    <ol class="breadcrumb">
+    {if $is404 eq 'true'}
+        {foreach $breadcrumb as $crumb}
+            {if $crumb@last}
+                <li class="active"><a href="/">{$crumb}</a></li>
+                {else}
+                <li><a href="/">{$crumb}</a></li>
+              {/if}
+          {/foreach}
+      {else}
+        {foreach $breadcrumb as $crumb}
+            {if $crumb@last}
+                <li class="active"><a href="/{$crumb}">{$crumb}</a></li>
+                {else}
+                <li><a href="/{$crumb}">{$crumb}</a></li>
+              {/if}
+          {/foreach}
+      {/if}
+    </ol>
+  </div>
+
+
   <div class="social-media">
     {foreach $socialmedia as $site}
-    <li><a href="/{$site}">{$site@key}</a></li>
+    <li><a href="{$site}">{$site@key}</a></li>
     {/foreach}
   </div>
   <br>
