@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1-DEV, created on 2015-03-23 17:26:19
+<?php /* Smarty version Smarty-3.1-DEV, created on 2015-03-24 20:42:06
          compiled from "/home/member/rjames93/public_html/lefthandscientist/templates/scripts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5704396635509a2b29cdb09-88028471%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8f514335d7563417413339ad925c9bba9820035a' => 
     array (
       0 => '/home/member/rjames93/public_html/lefthandscientist/templates/layout.tpl',
-      1 => 1426764648,
+      1 => 1427229722,
       2 => 'file',
     ),
   ),
@@ -48,7 +48,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5509a2b2a4ee03_84613880')) {function content_5509a2b2a4ee03_84613880($_smarty_tpl) {?><html>
+
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  

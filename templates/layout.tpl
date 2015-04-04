@@ -1,5 +1,7 @@
 <html>
+
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{$title}</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  
   <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->

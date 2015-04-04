@@ -48,6 +48,9 @@ if($result){
   if (PHPassLib\Hash\BCrypt::verify($password, $hash)) {
     // Password is valid!
     //echo 'Success';
+    //$db->Prepare('INSERT INTO ')
+    $sid = session_id();
+    echo $sid;
     $smarty->assign('tree',$tree);
     $smarty->display('dashboardblocks.tpl');
   } else {
