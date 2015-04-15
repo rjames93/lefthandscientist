@@ -24,6 +24,7 @@ function display_tree($db,$rootid){
         }
         // add this node to the stack
         $right[] = $row['rgt'];
+        //$titles[] = $row['lft'].' '.$row['title'].' '.$row['rgt'];
         $titles[] = $row['title'];
     }
 
@@ -64,5 +65,33 @@ function find_pageid($db,$pagename){
     }
 }
 
+
+function create_tree ($results) {
+
+    $return = $results[0];
+    array_shift($results);
+
+    if ($return['lft'] + 1 == $return['rgt'])
+        $return['leaf'] = true;
+    else {
+        foreach ($results as $key => $result) {
+            if ($result['lft'] > $return['rgt']) //not a child
+                break;
+            if ($rgt > $result['lft']) //not a top-level child
+                continue;
+            $return['children'][] = create_tree(array_values($results));
+            foreach ($results as $child_key => $child) {
+                if ($child['rgt'] < $result['rgt'])
+                    unset($results[$child_key]);
+            }
+            $rgt = $result['rgt'];
+            unset($results[$key]);
+        }
+    }
+
+    //unset($return['lft'],$return['rgt']);
+    return $return;
+
+}
 
 ?>

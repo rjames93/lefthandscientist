@@ -8,6 +8,7 @@
   <link href="https://lefthandscientist.co.uk/css/ripples.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- Custom Style Sheet From Here -->
+  <link href="js/jsoneditor/dist/jsoneditor.css" rel="stylesheet" type="text/css">
   <link href="https://lefthandscientist.co.uk/css/custom.css" rel="stylesheet">
 </head>
 <body>
