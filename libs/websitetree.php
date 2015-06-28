@@ -1,11 +1,23 @@
 <?php
 
 function display_tree($db,$rootid){
-    //Retrieve the Left and Right Value of the $rootid node
+	//Retrieve the Left and Right Value of the $rootid node
+
+    if($rootid == 0){
+	    $rootid = 1;
+    }
+
     $stmt = $db->Prepare('SELECT lft,rgt FROM lefthandscientist.pages WHERE id=?');
     $result = $db->Execute($stmt,$rootid);
 
     $row = $result->fields;
+
+    if(!$result){
+	    $stmt = $db->Prepare('SELECT lft,rgt FROM lefthandscientist.pages WHERE id=?');
+	    $result = $db->Execute($stmt,0);
+	    $row = $result->fields;
+    }
+
 
     //Start with empty $right stack
     $right = array();
@@ -56,12 +68,18 @@ function display_path($db,$id){
 function find_pageid($db,$pagename){
     $pagename = str_replace(' ', '', $pagename);
     $pagename = strtolower($pagename);
+    if($pagename == ''){
+	    $pagename='Home';
+    } if($pagename == NULL){
+	    $pagename='Home';
+    }
+
     $stmt = $db->Prepare("SELECT id FROM lefthandscientist.pages WHERE lower(replace(title,' ',''))=?");
     $result = $db->Execute($stmt,$pagename);
     if($result){
         return($result->fields["id"]);
     } else {
-        return(0);
+        return(1);
     }
 }
 

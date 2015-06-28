@@ -1,7 +1,11 @@
 <?php
 
 function get_page_content($db,$pageid){
-    $stmt = $db->Prepare('SELECT fragment FROM lefthandscientist.pages WHERE id=?');
+	if($pageid == 0){
+		return(NULL);
+	}	
+
+	$stmt = $db->Prepare('SELECT fragment FROM lefthandscientist.pages WHERE id=?');
     $result = $db->Execute($stmt,$pageid);
 
     $fragmentid = $result->fields["fragment"];

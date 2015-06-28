@@ -34,7 +34,6 @@
   <body>
 
     <div class="container">
-
       <form class="form-signin" method="POST" action="edit.php">
         <h2 style="text-align: center" class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -46,6 +45,10 @@
       {if $failed eq 'LOGIN FAILED'}
       <div style="text-align: center;" class="alert alert-danger" role="alert">{$failed}</div>
       {/if}
+	<div style="text-align:center;"><h3>You here by Accident?<br> Are called Hobbid?</br> Click <a href="https://lefthandscientist.co.uk">Here</a> to return to the homepage</div>
+
     </div> <!-- /container -->
+	
+
 
 </body></html>

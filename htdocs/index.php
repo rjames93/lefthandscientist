@@ -39,6 +39,7 @@ if($pagename == ''){
 
 if($pageid == 0){
 	$smarty->assign('is404','true');
+	$pageid = 0;
 	$path = array('Never Never Land','Second on the Right','Straight on till Morning');
 } else {
 	$path = display_path($db,$pageid);
@@ -68,7 +69,11 @@ $socialmedia = array(
 
 // Now for fragmentid and content. No idea about the best way of doing this
 $output = get_page_content($db,$pageid);
-
+if($output == NULL){
+	$output[0] = "LOL WUT";
+	$output[1] = "404";
+	$output[2] = "0s ago";
+}
 $smarty->assign('content',$output[0]);
 $smarty->assign('fragmentid',$output[1]);
 $smarty->assign('modified',$output[2]);
